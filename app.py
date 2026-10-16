@@ -151,53 +151,44 @@ html, body, [data-testid="stAppViewContainer"],
 </style>
 """, unsafe_allow_html=True)
 
-# FLOATING SPINNING NYAN CAT 🐱🌈
+
+# -------------------------------------------------
+# NYAN CAT - FLOATING ANIMATION
+# -------------------------------------------------
+import streamlit as st
+
 st.markdown("""
 <style>
 .nyan-cat {
     position: fixed;
-    bottom: 18px;
-    right: 18px;
-    width: 100px;
-    height: 100px;
+    bottom: 20px;
+    right: 20px;
+    width: 110px;
     z-index: 999999;
     pointer-events: none;
-    animation: nyan-spin 3s linear infinite;
+    animation: nyan-spin 4s linear infinite;
 }
 
 .nyan-cat img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    display: block;
 }
 
 @keyframes nyan-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Make the cat smaller on phones */
-@media (max-width: 600px) {
-    .nyan-cat {
-        width: 65px;
-        height: 65px;
-        bottom: 10px;
-        right: 10px;
-    }
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 </style>
 
 <div class="nyan-cat">
     <img
         src="https://media.tenor.com/2roX3uxz_68AAAAC/cat-space.gif"
-        alt="Spinning Nyan Cat"
+        alt="Nyan Cat"
     />
 </div>
 """, unsafe_allow_html=True)
+
 
 COUNTRIES = {
     "Mexico (MX)": "MEX", "Brazil (BR)": "BRA", "Argentina (AR)": "ARG",
