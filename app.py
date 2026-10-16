@@ -26,6 +26,111 @@ from sklearn.metrics import mean_absolute_error, r2_score
 
 st.set_page_config(page_title="Hispanic Heritage Historical Data Explorer", page_icon="📈", layout="wide")
 
+# PINK THEME
+st.markdown("""
+<style>
+/* Main page background */
+.stApp {
+    background-color: #FFF0F5;
+    color: #54283D;
+}
+
+/* Main content area */
+section[data-testid="stMain"] {
+    background-color: #FFF0F5;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #F8C8DC;
+}
+
+section[data-testid="stSidebar"] > div {
+    background-color: #F8C8DC;
+}
+
+/* Headings and text */
+h1, h2, h3, h4, p, label,
+[data-testid="stMarkdownContainer"] {
+    color: #713B55;
+}
+
+/* Buttons */
+.stButton > button,
+.stDownloadButton > button {
+    background-color: #D96C9D;
+    color: white;
+    border: 1px solid #C65386;
+    border-radius: 12px;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background-color: #BD4F82;
+    color: white;
+    border-color: #A93D70;
+}
+
+/* Input boxes and dropdowns */
+.stTextInput input,
+.stNumberInput input,
+.stSelectbox [data-baseweb="select"],
+.stMultiSelect [data-baseweb="select"] {
+    background-color: #FFF8FB;
+    border-color: #E7A1BF;
+}
+
+/* Sliders and selected controls */
+.stSlider [data-baseweb="slider"] div[role="slider"] {
+    background-color: #C65386;
+}
+
+/* Metric cards */
+[data-testid="stMetric"] {
+    background-color: #FADBE8;
+    border: 1px solid #E7A1BF;
+    padding: 16px;
+    border-radius: 14px;
+}
+
+/* Tables and data editors */
+[data-testid="stDataFrame"],
+[data-testid="stDataEditor"] {
+    background-color: #FFF8FB;
+    border: 1px solid #E7A1BF;
+    border-radius: 12px;
+}
+
+/* Expanders */
+[data-testid="stExpander"] {
+    background-color: #FFE3EE;
+    border: 1px solid #E7A1BF;
+    border-radius: 12px;
+}
+
+/* Information, success, and warning messages */
+[data-testid="stAlert"] {
+    border-radius: 12px;
+}
+
+/* Horizontal dividers */
+hr {
+    border-color: #E7A1BF;
+}
+
+/* Links */
+a {
+    color: #A83269 !important;
+}
+
+/* Selection highlight */
+::selection {
+    background-color: #F2A9C9;
+    color: #54283D;
+}
+</style>
+""", unsafe_allow_html=True)
+
 COUNTRIES = {
     "Mexico (MX)": "MEX", "Brazil (BR)": "BRA", "Argentina (AR)": "ARG",
     "Colombia (CO)": "COL", "Chile (CL)": "CHL", "Peru (PE)": "PER",
