@@ -152,42 +152,46 @@ html, body, [data-testid="stAppViewContainer"],
 """, unsafe_allow_html=True)
 
 
-# -------------------------------------------------
-# NYAN CAT - FLOATING ANIMATION
-# -------------------------------------------------
-import streamlit as st
-
+# 🌈 FLOATING EMOJI NYAN CAT
 st.markdown("""
 <style>
-.nyan-cat {
+.nyan-emoji {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 110px;
+    bottom: 22px;
+    right: 22px;
     z-index: 999999;
     pointer-events: none;
-    animation: nyan-spin 4s linear infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    animation: nyan-float 2s ease-in-out infinite;
+    font-size: 34px;
+    line-height: 1.1;
+    filter: drop-shadow(0 2px 3px #e7a1bf);
 }
 
-.nyan-cat img {
-    width: 100%;
-    height: auto;
-    display: block;
+.nyan-rainbow {
+    font-size: 36px;
+    letter-spacing: -5px;
 }
 
-@keyframes nyan-spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+@keyframes nyan-float {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
 }
 </style>
 
-<div class="nyan-cat">
-    <img
-        src="https://media.tenor.com/2roX3uxz_68AAAAC/cat-space.gif"
-        alt="Nyan Cat"
-    />
+<div class="nyan-emoji">
+    <div class="nyan-cat-face">🐱</div>
+    <div class="nyan-rainbow">🌈✨</div>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 COUNTRIES = {
