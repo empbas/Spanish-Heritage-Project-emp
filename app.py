@@ -128,6 +128,26 @@ a {
     background-color: #F2A9C9;
     color: #54283D;
 }
+
+/* FORCE THE PINK THEME */
+html, body, [data-testid="stAppViewContainer"],
+[data-testid="stMain"], .stApp {
+    background: #FFF0F5 !important;
+    color: #713B55 !important;
+}
+
+[data-testid="stHeader"] {
+    background: #FFF0F5 !important;
+}
+
+[data-testid="stSidebar"],
+[data-testid="stSidebar"] > div {
+    background: #F8C8DC !important;
+}
+
+[data-testid="stMainBlockContainer"] {
+    background: transparent !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -788,3 +808,46 @@ with st.expander("How the app works, assumptions, and limitations"):
 
     **Limitations:** missing source observations remain missing; data can be revised by the World Bank; edited data are scenarios; polynomial extrapolation can be unstable; numerical calculus checks may miss close roots or narrow behavior; example context functions are instructional and not validated medical, engineering, weather, or economic models.
     """)
+
+# 💗 RANDOM PINK FORTUNE GENERATOR
+import random
+
+fortunes = [
+    "💗 Something good is finding its way to you.",
+    "🌸 Your next idea might be your best one yet.",
+    "✨ You are allowed to start over as many times as you need.",
+    "🎀 Romanticize the little things today.",
+    "🌷 A small step still counts as progress.",
+    "💌 Someone appreciates you more than you know.",
+    "🦋 Your future self is cheering you on.",
+    "🍓 Make today a little more colorful.",
+    "🌈 Unexpected things can become your favorite memories.",
+    "💖 Keep going. Your story is still unfolding.",
+]
+
+st.markdown("## 🎀 Your Random Pink Fortune")
+
+st.write("Need a little surprise? Click below!")
+
+if st.button("💗 Reveal My Fortune"):
+    fortune = random.choice(fortunes)
+    st.session_state["pink_fortune"] = fortune
+
+if "pink_fortune" in st.session_state:
+    st.markdown(
+        f"""
+        <div style="
+            background: linear-gradient(135deg, #FADBE8, #F8C8DC, #FFF0F5);
+            border: 2px solid #E7A1BF;
+            border-radius: 20px;
+            padding: 28px;
+            text-align: center;
+            font-size: 22px;
+            color: #713B55;
+            margin-top: 15px;
+        ">
+            {st.session_state["pink_fortune"]}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
